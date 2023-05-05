@@ -83,7 +83,9 @@ class PrintDigital extends Component
             $price = $paper->top_coala;
 
             $this->productionCost = $DigitalPrintingCost->unit_price;
-
+            if($this->sides == 2){
+                $this->productionCost *= $this->productionCost;
+            }
             $cost = $price + $this->productionCost;
             $cost *= $this->quantity;
             $discount = DigitalPrintingDiscount::where('min_quantity', '<=',  $this->quantity)
