@@ -84,7 +84,7 @@ class PrintDigital extends Component
 
             $this->productionCost = $DigitalPrintingCost->unit_price;
             if($this->sides == 2){
-                $this->productionCost *= $this->productionCost;
+                $this->productionCost *= 2;
             }
             $cost = $price + $this->productionCost;
             $cost *= $this->quantity;
